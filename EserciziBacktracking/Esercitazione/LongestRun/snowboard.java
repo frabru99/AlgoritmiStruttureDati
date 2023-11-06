@@ -89,7 +89,7 @@ public class snowboard {
 
 
 
-                if(isSafe(x, y, nextX, nextY, mappa)){
+                if(isSafe(x, y, nextX, nextY, mappa)){ //euristioca!!!!
                     if(mappa[nextX][nextY]>minDistance){
                         minDistance=mappa[nextX][nextY];
                         minX=nextX;

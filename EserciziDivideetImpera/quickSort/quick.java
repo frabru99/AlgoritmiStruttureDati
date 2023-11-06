@@ -26,7 +26,7 @@ public class quick {
 
         int i = l-1; //primo indice minore dle primo elemento preso in considerazione
 
-        for(int j=l; j<=r; j++){ //j parte da l e arriva a r
+        for(int j=l; j<r; j++){ //j parte da l e arriva a r
             if(vet[j]<x){ //se j è minore del pivot
                 //swap!
                 i=i+1; //faccio spazio e scambio
@@ -52,7 +52,7 @@ public class quick {
         
 
         //implementiamo il merge sort 
-        int [] vet = {10, 1, 20, -10, -30};
+        int [] vet = {100, -1, -200, -10, -30, 50};
 
         quick m = new quick();
 

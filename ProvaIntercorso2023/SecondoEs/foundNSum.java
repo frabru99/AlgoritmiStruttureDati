@@ -70,7 +70,7 @@ public class foundNSum {
                     sum+=current.get(i);
                 } else if(i<current.size()-1 && current.get(i)>current.get(i+1)){
                     return;
-                } else if(i==current.size()-1){
+                } else {
                     sum+=current.get(i);
                 }
                 

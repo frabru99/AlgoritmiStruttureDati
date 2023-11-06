@@ -53,19 +53,17 @@ public class sumFirst {
             int sumTot =0; //somma totale nulla
             
                 for(int i=0; i<nums; i++){
-                    sumTot+=curr.get(i); //sommo
-                }
-
-                if(nums==1 && sumTot==sum){ //e elmento uguale a 1 e soddisfa ok
-                    return true;
-                }
-
-
-                if(curr.size() >=2 && sumTot==sum){ //se soddisfa
-                    if(curr.get(0)>curr.get(1) || curr.get(1) > curr.get(2)){ //se ho permutazioni doppie torno false 
+                    
+                    if(i!= nums-1 && curr.get(i)>curr.get(i+1)){ //cancello le permutazioni doppie!
                         return false;
                     }
-                
+
+                    sumTot+=curr.get(i); //sommo
+
+                }
+
+            
+                if(sumTot==sum){ //se soddisfa
                     return true; //sennò è true
                 }
 
@@ -86,7 +84,6 @@ public class sumFirst {
             }
 
             System.out.println("");
-
             return; //torno
         }
 

@@ -86,7 +86,7 @@ public class quadrati {
 
             isNumb=true;
 
-            for(int k=0; k<n; k++){
+            for(int k=0; k<n; k++){  //isSafe?
                     if(current[row][k]==elems.get(i) || current[k][col]==elems.get(i) || current[k][k]==elems.get(i) || current[k][n-k-1]==elems.get(i)){ //controllo se sia presente
                         //su riga, colonna e diagonali
                             isNumb= false;
@@ -117,7 +117,7 @@ public class quadrati {
     //COMPLEXITY: 2^n
     public static void main(String[] args) {
 
-        int n = 4;
+        int n = 3;
 
         ArrayList<Integer> elems = new ArrayList<>();  //cadidati per ogni posizione 
 
