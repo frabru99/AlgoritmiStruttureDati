@@ -18,23 +18,23 @@ public class sumFirst {
 
         for(int i=start+1; i<=sum; i++){ //tutti i valori dallo start alla somma, prendo solo i numeri primi!
             divisibile=false;
-            if(i==2){ //è un numero primo!
-                candidates.add(i);
-            }
-
-            if(i%2!=0){
-
-                //controllo ora se ha altri divisori!
-                for(int j=2; j<=Math.sqrt(i); j++){
-                    if(i%j==0){
-                        divisibile=true;
-                    }
-                }
-
-                if(!divisibile){
+                if(i==2){ //è un numero primo!
                     candidates.add(i);
                 }
-            }
+
+                if(i%2!=0){
+
+                    //controllo ora se ha altri divisori!
+                    for(int j=2; j<=Math.sqrt(i); j++){
+                        if(i%j==0){
+                            divisibile=true;
+                        }
+                    }
+
+                    if(!divisibile){
+                        candidates.add(i);
+                    }
+                }
 
             
 
@@ -136,9 +136,6 @@ public class sumFirst {
 
 
             }
-
-
-
 
 
 

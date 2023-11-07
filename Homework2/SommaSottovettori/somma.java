@@ -64,10 +64,14 @@ public class somma {
 
 
     
-        if((maxs+maxd)>=max){ //ma se la somma dei due è il massimo, pongo il massimo alla loro somma
+        if(maxs+maxd>=max){ //ma se la somma dei due è il massimo, pongo il massimo alla loro somma
             max = maxs+maxd;
-        }
-       
+        } else if (maxs>=maxd+maxs && maxs>=max){
+            max = maxs;
+        } else if(maxd>=maxd+maxs && maxd>=max){
+            max=maxd;
+        }       
+                   
         return max; //torno max
 
     }

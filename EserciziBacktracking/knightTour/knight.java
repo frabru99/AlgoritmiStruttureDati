@@ -25,6 +25,8 @@ public class knight {
     public void backtrack(int k, int [][] result, int n, int x, int y){
         
         if(isSolution(k, n)){ //se soluzione, stampo!
+
+            System.out.println("Possibile Soluzione:");
             for(int i=0; i<n; i++){
                 for(int j=0; j<n; j++){
                     System.out.printf("%d\t", result[i][j]);
@@ -33,7 +35,7 @@ public class knight {
                 System.out.println(" ");
             }
 
-           System.exit(0);
+           return;
             
         }
 

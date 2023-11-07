@@ -1,6 +1,8 @@
 package EserciziDivideetImpera.predecessori;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * pred
@@ -29,16 +31,14 @@ public class pred {
             
         } else if(l==i){ //se invece l e' uguale proprio alla posizione di inserimento
 
-            if(l==0){ //se e' zero, nonn posso swapparee con nessun altro elemento dietrto di me, return
+            if(l==0){ //se e' zero, nonn posso swappare con nessun altro elemento dietrto di me, return
                 return;
             }
 
             if(vet.get(l-1)>vet.get(i)){ //se l'elemento dietro di me e' maggiore
 
-                //faccio un semplice swap
-                int temp = vet.get(l-1);
-                vet.set(l-1, vet.get(i));
-                vet.set(i, temp);
+               
+                Collections.swap(vet, l-1, i);
                 //decremento la posizione 
                 i--; 
                 //richiamo il tutto con la nuova posizione!
@@ -119,6 +119,43 @@ public class pred {
 
 
 
+    //Quick Sort//
+
+    public void quickSort(ArrayList<Integer> vet, int l, int r){
+        if(l<r){
+            int m = partition(vet, l, r);
+            quickSort(vet, l, m-1);
+            quickSort(vet, m+1, r);
+        }
+    }
+
+
+
+    private int partition(ArrayList<Integer> vet, int l, int r) {
+        
+        int x = vet.get(r); //pivot, potrei randomizzarlo per aumentare la probabilità di caso migliore!
+
+
+        int i = l-1;
+
+        for(int j =l; j<r; j++){
+            if(vet.get(j)<x){
+                i++;
+                Collections.swap(vet, i, j);
+            }
+        }
+
+
+        Collections.swap(vet, i+1, r);
+
+        return i+1;
+    }
+
+
+
+ 
+
+
     public static void main(String[] args) {
 
 
@@ -133,7 +170,7 @@ public class pred {
 
         pred p = new pred();
 
-        p.mergeSort(vet, 0, 3);
+        p.quickSort(vet, 0, 3);
 
         System.out.println(vet.toString());
 

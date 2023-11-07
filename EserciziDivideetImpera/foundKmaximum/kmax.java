@@ -1,5 +1,7 @@
 package EserciziDivideetImpera.foundKmaximum;
 
+import java.util.Collections;
+
 public class kmax {
 
 
@@ -45,6 +47,7 @@ public class kmax {
             if(vet[j]>x){
                 i++;
 
+                
                 int temp = vet[j];
                 vet[j]= vet[i];
                 vet[i]=temp;
